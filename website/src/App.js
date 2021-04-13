@@ -6,6 +6,9 @@ function App() {
   const [isFetched, setIsFetched] = useState(false);
   const [IdData, setIdData] = useState([]);
   const [EmissionsData, setEmissionsData] = useState([]);
+  const [TotalEmissionsData, setTotalEmissionsData] = useState(0);
+  let TotalEmissionsCounter = 0;
+
 
   useEffect( () => {
     async function fetchData(){
@@ -13,28 +16,32 @@ function App() {
       const response = await fetch(url);
       const responseData = await response.json();
       console.log(responseData);
-      responseData.map(response => {
+      responseData.filter(response => response.YEAR == 2019).map(response => {
         console.log(response);
         const facilityId = response.FACILITY_ID;
         const facilityEmissions = response.CO2E_EMISSION;
         console.log(facilityId);
         console.log(facilityEmissions);
         if((!IdData.includes(facilityId))){
-          console.log('setting Data');
           setIdData(IdData.push(facilityId));
-          setEmissionsData(EmissionsData.push(facilityEmissions));
         }
+        setEmissionsData(EmissionsData.push(facilityEmissions));
+        TotalEmissionsCounter = TotalEmissionsCounter + facilityEmissions
         console.log(IdData);
         console.log(EmissionsData);
+        console.log(TotalEmissionsCounter);
       });
       setIsFetched(true);
+      setTotalEmissionsData(TotalEmissionsCounter);
     }
     fetchData();
   }, []);
 
+  let str = 'Total CO2 equivalent emissions from ' + IdData + ' facilities in this zip is ' + TotalEmissionsData;
+
   return (
     <div className="App">
-      {isFetched ? EmissionsData : 'loading...'}
+      {isFetched ? str : 'loading...'}
     </div>
   );
 }
