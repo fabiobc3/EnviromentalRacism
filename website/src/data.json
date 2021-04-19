@@ -1,0 +1,9 @@
+{
+    "description": "Project will not store data in json as it will fetch data from the EPA API",
+    "whatIsEnviroRascm" : "Environmental racism is the term is used to describe the disproportionate environmental injustice that occurs within neighborhoods that are composed by a significant number of minority groups and people of lower socio-economic status.",
+    "whatToDoAboutEnviroRascm" : 
+        ["Increase awareness by letting your fellow community members know",
+            "Research your local communities issue more in depth so that you can take precautions against the possible environmental side effects",
+            "Contact your local government representatives"
+        ]
+}
