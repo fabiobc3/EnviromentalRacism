@@ -13,14 +13,17 @@ function App() {
 
   return (
     <div className="App">
-      <div className="EnvRac">
-        <EnvRac/>
+      <div class="flex-container">
+        <div className="EnvRac">
+          <EnvRac/>
+        </div>
+        <div className="Zip">
+          <GetZip setZip={setZip}/>
+          <DisplayZIP zip={zip}/>
+          {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
+        </div>
       </div>
-      <div className="Zip">
-        <GetZip setZip={setZip}/>
-        <DisplayZIP zip={zip}/>
-        {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
-      </div>
+      
       
     </div>
     
