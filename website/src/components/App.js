@@ -3,11 +3,12 @@ import React, {useState, useEffect, useContext} from 'react';
 import CO2E_Emissions from './CO2Emissions';
 import GetZip from './GetZip';
 import DisplayZIP from './DisplayZIP';
+import WaterPerformer from './WaterPerformer';
 
 function App() {
 
   const [zip, setZip] = useState("");
-  const [co2Data, setco2Data] = useState();
+
   let isEmptyZip = (zip === "") 
 
   return (
@@ -15,6 +16,7 @@ function App() {
       <GetZip setZip={setZip}/>
       <DisplayZIP zip={zip}/>
       {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
+      {isEmptyZip ? "" : <WaterPerformer zip={zip}/>}
     </div>
   );
 }
