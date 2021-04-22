@@ -7,6 +7,7 @@ import DisplayZIP from './DisplayZIP';
 function App() {
 
   const [zip, setZip] = useState("");
+  const [co2Data, setco2Data] = useState();
   let isEmptyZip = (zip === "") 
 
   return (

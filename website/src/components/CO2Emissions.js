@@ -2,49 +2,31 @@ import React, {useEffect, useState} from 'react';
 
 function CO2E_Emissions(props){
 
-    const [isFetched, setIsFetched] = useState(false);
-    const [IdData, setIdData] = useState([]);
-    const [EmissionsData, setEmissionsData] = useState([]);
-    const [TotalEmissionsData, setTotalEmissionsData] = useState(0);
-    let TotalEmissionsCounter = 0;
-
-    const baseLink = "https://enviro.epa.gov/enviro/efservice/V_GHG_EMITTER_GAS/ZIP/=/";
+    const baseLink = "https://enviro.epa.gov/enviro/efservice/V_GHG_EMITTER_GAS/YEAR/=/2019/ZIP/=/";
     const zip = props.zip;
     const url = baseLink + zip + "/JSON"
+
+    const[data, setData] = useState();
   
-    useEffect( () => {
-      async function fetchData(){
+    useEffect( async() => {
         const response = await fetch(url);
         const responseData = await response.json();
-        //console.log(responseData);
-        responseData.filter(response => response.YEAR == 2019).map(response => {
-          //console.log(response);
-          const facilityId = response.FACILITY_ID;
-          const facilityEmissions = response.CO2E_EMISSION;
-          //console.log(facilityId);
-          //console.log(facilityEmissions);
-          if((!IdData.includes(facilityId))){
-            setIdData(IdData.push(facilityId));
-          }
-          setEmissionsData(EmissionsData.push(facilityEmissions));
-          TotalEmissionsCounter = TotalEmissionsCounter + facilityEmissions
-          console.log(IdData);
-          console.log(EmissionsData);
-          console.log(TotalEmissionsCounter);
-        });
-        setIsFetched(true);
-        setTotalEmissionsData(TotalEmissionsCounter);
-      }
-      fetchData();
-    }, [zip]);
+        console.log(responseData);
+        let counter = 0;
+        responseData.map(response => {
+          const count = response.CO2E_EMISSION;
+          counter = counter + count;
+        }); 
+        setData(counter);
+      });
 
-    let str = 'Total CO2 equivalent emissions from ' + IdData + ' facilities in zip ' + zip + ' is ' + TotalEmissionsData;
+    let str = 'Total CO2 equivalent emissions from facilities in zip ' + zip + ' is ' + data;
 
     return (
       <div>
-        {isFetched ? str : 'loading...'}
+        {data && <div> {str} </div>}
       </div>
     );
-}
+};
   
 export default CO2E_Emissions;
