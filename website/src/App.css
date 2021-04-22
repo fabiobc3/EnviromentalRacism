@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.EnvRac{
+  text-align:center;
+  height: 150px;
+  border: 2px solid green;
+  margin: 50px;
+}
+
+.head{
+  font-size: medium;
+  font-weight: 700;
+}
+
+.Zip{
+  text-align: left;
+  width: 300px;
+  margin: 50px;
+  border: 2px solid blue;
+}
