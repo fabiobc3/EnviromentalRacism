@@ -6,7 +6,6 @@ function Graph(){
     return(
         <div>
             Graph goes here
-            <img src="./tcwe5.png"/>
         </div>
     )
 
