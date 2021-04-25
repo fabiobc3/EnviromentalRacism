@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-function WaterPerformer(props){
+function Generators(props){
 
     const baseLink = "https://enviro.epa.gov/enviro/efservice/RCR_HD_REPORTING/LOCATION_ZIP/=/";
     const zip = props.zip;
@@ -49,4 +49,4 @@ function WaterPerformer(props){
     );
 };
   
-export default WaterPerformer;
+export default Generators;
