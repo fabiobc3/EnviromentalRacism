@@ -1,7 +1,10 @@
-function Graph(){
+import DisplayData from './DisplayData';
+
+function Graph(props){
+    let zip = props.zip;
     return(
         <div>
-            Graph goes here
+            <DisplayData zip={zip}/>
         </div>
     )
 

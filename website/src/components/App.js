@@ -35,18 +35,22 @@ function App() {
           <div className="Zip">
             <GetZip setZip={setZip}/>
             <DisplayZIP zip={zip}/>
-            {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
+
+
+            {/* {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
             {isEmptyZip ? "" : <Generators zip={zip}/>}
             {isEmptyZip ? "" : <EnviroJust zip={zip}/>}
             {isEmptyZip ? "" : <MethaneEmissions zip={zip}/>}
             {isEmptyZip ? "" : <BiogenicCO2Emissions zip={zip}/>}
             {isEmptyZip ? "" : <CO2Emissions zip={zip}/>}
-            {isEmptyZip ? "" : <NitrousOxideEmissions zip={zip}/>}
+            {isEmptyZip ? "" : <NitrousOxideEmissions zip={zip}/>} */}
+
+
           </div>
         </div>
         <div className="inner-container2">
           <div className="Graph">
-           <Graph/>
+           <Graph zip={zip}/>
           </div>
         </div>
       </div>
