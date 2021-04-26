@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-function EnviroJust(props){
+function BiogenicCO2Emissions(props){
 
-    const baseLink = "https://enviro.epa.gov/enviro/efservice/ICIS_FACILITY_INTEREST/ZIP/=/";
+    const baseLink = "https://enviro.epa.gov/enviro/efservice/V_GHG_EMITTER_GAS/YEAR/=/2019/ZIP/=/";
     const zip = props.zip;
     const url = baseLink + zip + "/JSON"
 
@@ -12,20 +12,18 @@ function EnviroJust(props){
         const response = await fetch(url);
         const responseData = await response.json();
         console.log(responseData);
-        let counter = "";
-        let hasOccured = false;
+        let counter = 0;
         responseData.map(response => {
-          const count = response.ENVIRONMENTAL_JUSTICE_DESC;
-          if (count !== null && hasOccured === false){
+          if(response.GAS_NAME == 'Biogenic CO2'){
+            const count = response.CO2E_EMISSION;
             counter = counter + count;
-            hasOccured = true;
           }
         }); 
         setData(counter);
       });
 
-    let isData = (typeof(data) == String);
-    let str = 'Enviromental Justice Description in zip ' + zip + ' is ' + data;
+    let isData = (data != 0);
+    let str = 'Total Biogenic CO2 in CO2 equivalent emissions from facilities in zip ' + zip + ' is ' + data;
 
     return (
       <div>
@@ -34,4 +32,4 @@ function EnviroJust(props){
     );
 };
   
-export default EnviroJust;
+export default BiogenicCO2Emissions;

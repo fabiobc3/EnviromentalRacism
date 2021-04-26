@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
-import CO2E_Emissions from './CO2Emissions';
+import CO2E_Emissions from './CO2E_Emissions';
 import DisplayZIP from './DisplayZIP';
 
 function GetZip(props){
