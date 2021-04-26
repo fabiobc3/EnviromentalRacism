@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, PureComponent} from 'react';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 
 function DisplayData(props){
     
@@ -133,20 +135,50 @@ function DisplayData(props){
         setbiogenicCO2Data(biogenicCO2);
         setcO2Data(cO2);
         setnitrousOxideData(nitrousOxide);
-      });
+    });
+
+    const data = [
+        {
+          name: 'All Emissions in their CO2 Equivalent',
+          emissions: cO2EData,
+        },
+        {
+          name: 'Methane',
+          emissions: methaneData,
+        },
+        {
+          name: 'Biogenic CO2',
+          emissions: biogenicCO2Data,
+        },
+        {
+          name: 'CO2',
+          emissions: cO2Data,
+        },
+        {
+          name: 'Nitrous Oxide',
+          emissions: nitrousOxideData
+        }
+      ];
 
     return (
-      <div>
-        {cO2EData}
-        <br></br>
-        {methaneData}
-        <br></br>
-        {biogenicCO2Data}
-        <br></br>
-        {cO2Data}
-        <br></br>
-        {nitrousOxideData}
-      </div>
+        <BarChart 
+            width={500}
+            height={300} 
+            data={data}
+            margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+            }}
+        >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="emissions" fill="#8884d8" />
+        </BarChart>
     );
 };
   
