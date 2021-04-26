@@ -20,11 +20,12 @@ function CO2E_Emissions(props){
         setData(counter);
       });
 
+    let isData = (data != 0);
     let str = 'Total CO2 equivalent emissions from facilities in zip ' + zip + ' is ' + data;
 
     return (
       <div>
-        {data && <div> {str} </div>}
+        {isData ? str : 'no data'}
       </div>
     );
 };

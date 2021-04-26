@@ -4,6 +4,7 @@ import CO2E_Emissions from './CO2Emissions';
 import GetZip from './GetZip';
 import DisplayZIP from './DisplayZIP';
 import Generators from './Generators';
+import EnviroJust from './EnviroJust';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <DisplayZIP zip={zip}/>
       {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
       {isEmptyZip ? "" : <Generators zip={zip}/>}
+      {isEmptyZip ? "" : <EnviroJust zip={zip}/>}
     </div>
   );
 }
