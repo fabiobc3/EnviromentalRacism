@@ -1,16 +1,13 @@
 import React from 'react';
-import { Container} from '@material-ui/core';
 
 function DisplayZIP(props){
 
     return(
-        <Container>
+        <div>
             <div>
-                <div>
-                    Submitted ZIP: {props.zip}
-                </div>
+                Submitted ZIP: {props.zip}
             </div>
-        </Container>
+        </div>
     )
 }
 

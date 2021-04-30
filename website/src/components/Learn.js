@@ -3,8 +3,8 @@ import React from 'react';
 function Learn(){
     return(
             <div>
-                <section className="head">Learn more about what you can do.</section>
-                <div className="bullet">
+                <p>Learn more about what you can do:</p>
+                <ul>
                     <li>
                         Increase awareness by letting your fellow community members know
                     </li>
@@ -14,7 +14,7 @@ function Learn(){
                     <li>
                         Contact your local government representatives
                     </li>
-                </div>
+                </ul>
             </div>
     )
 
