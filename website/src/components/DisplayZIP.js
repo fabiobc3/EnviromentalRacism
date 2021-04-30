@@ -1,13 +1,16 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React from 'react';
+import { Container} from '@material-ui/core';
 
 function DisplayZIP(props){
 
     return(
-        <div>
+        <Container>
             <div>
-                Submitted ZIP: {props.zip}
+                <div>
+                    Submitted ZIP: {props.zip}
+                </div>
             </div>
-        </div>
+        </Container>
     )
 }
 

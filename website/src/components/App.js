@@ -1,4 +1,4 @@
-import '../App.css';
+import '../Style.css';
 import React, {useState, useEffect, useContext} from 'react';
 import CO2E_Emissions from './CO2E_Emissions';
 import GetZip from './GetZip';
@@ -21,43 +21,23 @@ function App() {
   let isEmptyZip = (zip === "") 
 
   return (
-    <div className="App">
-      <div class="flex-container1">
-        <div className="EnvRac">
-          <EnvRac/>
-        </div>
+    <div>
+      <div class="container">
+        <EnvRac/>
       </div>
-      <div className="flex-container2">
-        <div className="inner-container1">
-          <div className="EnvCom">
-              <EnvCom/>
+      <div class="container">
+        <div className="row">
+          <div className="col-6">
+              <GetZip setZip={setZip}/>
+              <DisplayZIP zip={zip}/>
           </div>
-          <div className="Zip">
-            <GetZip setZip={setZip}/>
-            <DisplayZIP zip={zip}/>
-
-
-            {/* {isEmptyZip ? "" : <CO2E_Emissions zip={zip}/>}
-            {isEmptyZip ? "" : <Generators zip={zip}/>}
-            {isEmptyZip ? "" : <EnviroJust zip={zip}/>}
-            {isEmptyZip ? "" : <MethaneEmissions zip={zip}/>}
-            {isEmptyZip ? "" : <BiogenicCO2Emissions zip={zip}/>}
-            {isEmptyZip ? "" : <CO2Emissions zip={zip}/>}
-            {isEmptyZip ? "" : <NitrousOxideEmissions zip={zip}/>} */}
-
-
-          </div>
-        </div>
-        <div className="inner-container2">
-          <div className="Graph">
-           <Graph zip={zip}/>
+          <div className="col-6">
+            <Graph zip={zip}/>
           </div>
         </div>
       </div>
-      <div className="flex-container4">
-        <div className="Learn">
+      <div className="container">
           <Learn/>
-        </div>
       </div>
     </div>
   );

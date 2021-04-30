@@ -1,9 +1,14 @@
+import React from 'react';
+import { Container, Grid } from '@material-ui/core';
+
 function EnvCom(){
     return(
-        <div>
-            <section className="head">Environmental Racism in Communities</section>
-            Enter a zip-code to see information about environmental racism in that community:
-        </div>
+        <Container>
+                <div>
+                    <p><b>Environmental Racism in Communities</b></p>
+                    <p>Enter a zip-code to see information about environmental racism in that community:</p>
+                </div>
+        </Container>
     )
 
 }
