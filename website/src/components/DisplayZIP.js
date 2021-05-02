@@ -1,13 +1,12 @@
 import React from 'react';
+import {Text, Paragraph, Heading} from 'evergreen-ui';
 
 function DisplayZIP(props){
 
     return(
-        <div>
-            <div>
-                Submitted ZIP: {props.zip}
-            </div>
-        </div>
+        <Text>
+            Submitted ZIP: {props.zip}
+        </Text>
     )
 }
 

@@ -12,6 +12,7 @@ import NitrousOxideEmissions from './NitrousOxideEmissions';
 import EnvRac from './EnvRac';
 import Graph from './Graph';
 import Learn from './Learn';
+import AlertBox from './Alert';
 import EnvCom from './EnvCom';
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
             <Graph zip={zip}/>
           </div>
         </div>
+      </div>
+      <div className="container">
+          <AlertBox/>
       </div>
       <div className="container">
           <Learn/>

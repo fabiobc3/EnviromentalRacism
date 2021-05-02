@@ -1,20 +1,21 @@
 import React from 'react';
+import {UnorderedList, ListItem, Heading} from 'evergreen-ui';
 
 function Learn(){
     return(
             <div>
-                <p>Learn more about what you can do:</p>
-                <ul>
-                    <li>
+                <Heading>Learn more about what you can do:</Heading>
+                <UnorderedList>
+                    <ListItem>
                         Increase awareness by letting your fellow community members know
-                    </li>
-                    <li>
+                    </ListItem>
+                    <ListItem>
                         Research your local communities issue more in depth so that you can take precautions against the possible environmental side effects
-                    </li>
-                    <li>
+                    </ListItem>
+                    <ListItem>
                         Contact your local government representatives
-                    </li>
-                </ul>
+                    </ListItem>
+                </UnorderedList>
             </div>
     )
 
