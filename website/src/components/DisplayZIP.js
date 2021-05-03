@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Paragraph, Heading} from 'evergreen-ui';
+import {Paragraph} from 'evergreen-ui';
 
 function DisplayZIP(props){
 
