@@ -139,15 +139,11 @@ function DisplayData(props){
 
     const data = [
         {
-          name: 'All Emissions in their CO2 Equivalent',
-          emissions: cO2EData,
-        },
-        {
-          name: 'Methane',
+          name: 'CH4',
           emissions: methaneData,
         },
         {
-          name: 'Biogenic CO2',
+          name: 'B_CO2',
           emissions: biogenicCO2Data,
         },
         {
@@ -155,20 +151,21 @@ function DisplayData(props){
           emissions: cO2Data,
         },
         {
-          name: 'Nitrous Oxide',
+          name: 'N2O',
           emissions: nitrousOxideData
         }
       ];
 
     return (
         <BarChart 
+            
             width={500}
             height={300} 
             data={data}
             margin={{
                 top: 5,
                 right: 30,
-                left: 20,
+                left: 25,
                 bottom: 5,
             }}
         >
@@ -177,7 +174,7 @@ function DisplayData(props){
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="emissions" fill="#8884d8" />
+            <Bar dataKey="emissions" fill="#301b3f" />
         </BarChart>
     );
 };

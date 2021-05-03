@@ -16,13 +16,22 @@ function GetZip(props){
 
     return(
                 <div>
-                    <div>
-                        <Heading>Environmental Racism in Communities</Heading>
-                        <Text>Enter a zip-code to see information about environmental racism in that community:</Text>
-                    </div>
+                    <Heading
+                        marginLeft="25px"
+                    >
+                        Try it Out Yourself:
+                    </Heading>
+                    <Paragraph
+                        marginTop="25px"
+                        marginLeft="50px"
+                        marginBottom="25px"
+                    >
+                        Enter a zip-code to see information about environmental racism in that community:
+                    </Paragraph>
                     <div>
                         <form onSubmit={handleSubmitt}>
-                            <TextInput 
+                            <TextInput
+                                marginLeft="50px" 
                                 type="text" 
                                 placeholder="Enter zip here" 
                                 value={newZip} 
@@ -32,7 +41,7 @@ function GetZip(props){
                             >
                             </TextInput>
                             <Button
-                                appearance="primary" 
+                                marginLeft="50px"  
                                 type="submit"
                                 marginLeft={5}
                             >

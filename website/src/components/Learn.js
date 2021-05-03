@@ -4,8 +4,12 @@ import {UnorderedList, ListItem, Heading} from 'evergreen-ui';
 function Learn(){
     return(
             <div>
-                <Heading>Learn more about what you can do:</Heading>
-                <UnorderedList>
+                <Heading>
+                    Learn more about what you can do:
+                </Heading>
+                <UnorderedList
+                    marginLeft="50px"
+                >
                     <ListItem>
                         Increase awareness by letting your fellow community members know
                     </ListItem>

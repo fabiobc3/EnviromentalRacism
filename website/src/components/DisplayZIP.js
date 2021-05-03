@@ -4,9 +4,13 @@ import {Text, Paragraph, Heading} from 'evergreen-ui';
 function DisplayZIP(props){
 
     return(
-        <Text>
+        <Paragraph
+            marginTop="25px"
+            marginBottom="25px"
+            marginLeft="50px"
+        >
             Submitted ZIP: {props.zip}
-        </Text>
+        </Paragraph>
     )
 }
 
