@@ -9,6 +9,7 @@ function Learn(){
                 </Heading>
                 <UnorderedList
                     marginLeft="50px"
+                    marginBottom="100px"
                 >
                     <ListItem>
                         Increase awareness by letting your fellow community members know

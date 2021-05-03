@@ -11,7 +11,7 @@ function EnviroRacInCom(){
                 marginLeft="25px"
                 marginBottom="25px"
             >
-                In order to increase awareness about environmental racism, we decided to develop this website that displays information about the enviroment when it comes to a particular ZIP code 
+                In order to increase awareness about environmental racism, we decided to develop this website that displays information about the enviroment and socio-economic status when it comes to a particular ZIP code 
             </Paragraph>
             <Heading
                 marginTop="25px"
@@ -24,7 +24,7 @@ function EnviroRacInCom(){
                 marginTop="25px"
                 marginLeft="50px"
             >
-                All the data is being retrived from the EPA's Envirofacts API. When a person types a ZIP code below and clicks the submit button, we look for information on the emission of polutants in that area. We then parse through the data and display what we recieve from the EPA's database in a graph
+                All the data is being retrived from the EPA's Envirofacts API. When a person types a ZIP code below and clicks the submit button, we look for information on the emission of polutants in that area. We then parse through the data and display what we recieve from the EPA's database in a graph. We also search for how the EPA classified the population of that neighborhood. This is refered to as the enviromental justice description of the region.
             </Paragraph>
         </div>    
       );

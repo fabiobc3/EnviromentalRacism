@@ -16,6 +16,7 @@ import AlertBox from './Alert';
 import EnvCom from './EnvCom';
 import {Pane} from 'evergreen-ui'
 import EnviroRacInCom from './EnviroRacInCom'
+import DisplayJust from './DisplayJust';
 
 function App() {
 
@@ -44,6 +45,9 @@ function App() {
               <Graph zip={zip}/>
             </div>
           </div>
+        </div>
+        <div className="container">
+            <DisplayJust zip={zip}/>
         </div>
         <div className="container">
             <AlertBox/>
